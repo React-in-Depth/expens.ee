@@ -4,6 +4,7 @@
   "sideEffects": false,
   "scripts": {
     "build": "remix build",
+    "vercel-build": "prisma generate && prisma migrate deploy && remix build",
     "dev": "remix dev -c \"npm run dev:serve\"",
     "dev:serve": "binode -- @remix-run/serve:remix-serve ./build/index.js",
     "format": "prettier --write .",
@@ -12,8 +13,7 @@
     "setup:env": "shx cp .env.example .env",
     "setup:prisma": "prisma generate && prisma migrate deploy && prisma db seed",
     "start": "remix-serve ./build/index.js",
-    "test": "vitest",
-    "postinstall": "prisma generate"
+    "test": "vitest"
   },
   "prettier": {},
   "eslintIgnore": [
