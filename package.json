@@ -12,7 +12,8 @@
     "setup:env": "shx cp .env.example .env",
     "setup:prisma": "prisma generate && prisma migrate deploy && prisma db seed",
     "start": "remix-serve ./build/index.js",
-    "test": "vitest"
+    "test": "vitest",
+    "postinstall": "prisma generate"
   },
   "prettier": {},
   "eslintIgnore": [
